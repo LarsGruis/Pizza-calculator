@@ -29,16 +29,14 @@ hr {
 
 .block-1 {
   background-color: #ef2d2d;
-  height: auto;
-  width: auto;
   float: left;
+  margin-left: 25px;
 }
 
 .block-2 {
   background-color: #ef2d2d;
-  height: auto;
-  width: auto;
   float: right;
+  margin-right: 25px;
 }
 
 .middle-title {
