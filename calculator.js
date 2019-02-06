@@ -5,7 +5,9 @@
 
 pizza_list = ["Margeritha","Shoarma","Kaas","Salami","Hawai"];
 pizza_prices = [8, 9, 8.50, 8, 7.50];
+pizza_slices = [1, 1.2, 1.4, 2];
 allPrices = [];
+var sum = 0;
 
 var container = document.getElementById("pizzas");
  
@@ -115,7 +117,7 @@ function selected(id){
 
     allPrices.push(topping_price_list[unselected]);
 
-    var sum = allPrices.reduce(add, 0);
+    sum = allPrices.reduce(add, 0);
 
     function add(a, b) {
         return a + b;
@@ -123,6 +125,50 @@ function selected(id){
 
     document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + sum ;
 }
+
+function multiplyPrice(id) {
+  var normal = document.getElementById('normal');
+
+    multipliedPrice = sum * pizza_slices[id]; 
+
+    document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + multipliedPrice; 
+
+  console.log('normal');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // var toppingPrijs_container = document.getElementById("toppings_prijzen");
  

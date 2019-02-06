@@ -99,6 +99,12 @@ hr {
   float: left;
 }
 
+#slices {
+  width: 50%;
+  margin-right: 0;
+  float: right;
+}
+
 #toppings_prijzen {
   width: 50%;
   float: right;
@@ -134,6 +140,6 @@ hr {
 
 @media (min-width: 601px) {
 .w3-half {
-    width: 41% !important;
+    width: 46% !important;
   }
 }
