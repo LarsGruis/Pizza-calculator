@@ -7,6 +7,7 @@ pizza_list = ["Margeritha","Shoarma","Kaas","Salami","Hawai"];
 pizza_prices = [8, 9, 8.50, 8, 7.50];
 pizza_slices = [1, 1.2, 1.4, 2];
 allPrices = [];
+priceGlobalArray = [];
 var sum = 0;
 
 var container = document.getElementById("pizzas");
@@ -133,7 +134,15 @@ function multiplyPrice(id) {
 
     document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + multipliedPrice; 
 
-  console.log('normal');
+    priceGlobalArray.push(multipliedPrice);
+
+  totalPrice = priceGlobalArray.reduce(add, 0);
+
+  function add(c, d) {
+        return c + d;
+    }
+
+  document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalPrice;
 }
 
 
