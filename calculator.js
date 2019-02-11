@@ -8,9 +8,14 @@ pizza_prices = [8, 9, 8.50, 8, 7.50];
 pizza_slices = [1, 1.2, 1.4, 2];
 allPrices = [];
 priceGlobalArray = [];
+deliveryPriceArray = [];
 var sum = 0;
+var deliveryPrice = 2;
 
+var totalPrice = 0;
 var container = document.getElementById("pizzas");
+
+//hiermee wordt de lijst van pizzas gegenereerd
  
 function createPizzaList(){
 
@@ -30,7 +35,11 @@ function createPizzaList(){
 
       var listItem = document.createElement("li");
 
+      // id wordt meegegeven aan de li
+
       listItem.setAttribute("id", i);
+
+      // er wordt een naam gedisplayed uit de pizza_list array
 
       var listValue = document.createTextNode(pizza_list[i]);
 
@@ -73,7 +82,7 @@ function hidePizzaList($id) {
 topping_list = ["Salami","Geraspte kaas","Augurk","Ui","Peper","Kruiden"];
 topping_price_list = [2.50, 1, 0.75, 0.50, 0.25, 0.25];
 
-
+// hiermee wordt de toppinglijst in javascript gegenereerd
  
 function createToppingList(){
   
@@ -93,7 +102,11 @@ function createToppingList(){
 
     for(var x = 0; x < toppingListLength; x++){
 
+    // er wordt een naam gedisplayed uit de topping_list array
+
     var toppingListValue = document.createTextNode(topping_list[x] + ' €' + topping_price_list[x] );
+
+    // element LI wordt gecreerd
 
       var toppingListItem = document.createElement("li");
 
@@ -110,8 +123,10 @@ function createToppingList(){
   } 
 }
 
+// deze code zorgt ervoor dat als je een topping aanklikt dat deze rood wordt en dat de prijs van de topping bij de prijs van de pizza wordt opgeteld.
+
 function selected(id){
-    document.getElementById(id).style.color = "green";
+    document.getElementById(id).style.background = "#3f7007";
     var unselect = id.slice(-1);
     var unselected = unselect.slice(-1);
     console.log(unselected);
@@ -125,14 +140,17 @@ function selected(id){
     }
 
     document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + sum ;
+    document.getElementById('slices').style.display = 'block';
+    document.getElementById('slices').style.float = 'left';
 }
 
+// deze code zorgt ervoor dat de prijs van de pizza wordt vermenigdvuldigt met de grootte die je aanklikt
+
 function multiplyPrice(id) {
-  var normal = document.getElementById('normal');
+
+  // dit zorgt ervoor dat de prijs van de pizza vermenigvuldigt wordt met de grootte die je aanklikt
 
     multipliedPrice = sum * pizza_slices[id]; 
-
-    document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + multipliedPrice; 
 
     priceGlobalArray.push(multipliedPrice);
 
@@ -143,8 +161,38 @@ function multiplyPrice(id) {
     }
 
   document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalPrice;
+  document.getElementById('toppings').style.display = 'none';
+  document.getElementById('home_delivery').style.display = 'block';
 }
 
+// code van de checkbox
+
+function check(id) {
+  document.getElementById("myCheck").checked = true;
+
+  // dit zorgt ervoor dat de prijs van de pizza vermenigvuldigt wordt met de grootte die je aanklikt
+
+    newPrice = deliveryPrice + totalPrice; 
+
+    deliveryPriceArray.push(newPrice);
+
+  totalNewPrice = deliveryPriceArray.reduce(add, 0);
+
+  function add(c, d) {
+        return c + d;
+    }
+
+  document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalNewPrice;
+
+}
+
+
+
+
+
+function uncheck() {
+  document.getElementById("myCheck").checked = false;
+}
 
 
 

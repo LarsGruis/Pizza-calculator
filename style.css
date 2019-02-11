@@ -49,13 +49,13 @@ hr {
 
 .block-1 h1{
   padding-bottom: 15px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   letter-spacing: 4px;
 }
 
 .block-2 h1{
   padding-bottom: 15px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   letter-spacing: 4px;
 }
 
@@ -90,7 +90,7 @@ hr {
 #pizzas ul, li {
   padding-left: 0;
   list-style-type: none;
-  padding-bottom: 25px;
+  padding-bottom: 1px;
 }
 
 #toppings {
@@ -103,6 +103,7 @@ hr {
   width: 50%;
   margin-right: 0;
   float: right;
+  display: none;
 }
 
 #toppings_prijzen {
@@ -120,10 +121,69 @@ hr {
   margin-top: 0px;
 }
 
+#home_delivery {
+  display: none;
+}
+
 .black-border {
   border: 3px solid black;
   padding: 5px 25px 10px 25px;
   width: 45%;
+}
+
+.btn_default li{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    width: 155px;
+    cursor: pointer;
+    margin-bottom: 5px;
+   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.btn_default li:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.btn_default_top li{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.btn_default_top li:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.btn_default_size p{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    width: 190px;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.btn_default_size p:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
 }
 
 @media (max-width: 600px) {

@@ -31,8 +31,11 @@
 		<div class="w3-row">
 			<div class="block-1 w3-half w3-container">
 				<h1>Pizza's</h1>
-					<div id="pizzas">
+					<div class="btn_default" id="pizzas">
 					</div>
+			</div>
+			<div class="block-1 w3-half w3-container">
+				<img src="logo.png"></img>
 			</div>
 		</div>
 </div>
@@ -44,12 +47,18 @@
 		<img id="pizza_photo"></img>
 
 		<div id="pizza_price"></div>
+		<div id="home_delivery">
+			<p>Wilt u dat de pizza thuis bezorgd wordt?</p> <input type="checkbox" id="myCheck">
+			<button onclick="check();">Ja</button>
+			<button onclick="uncheck();">Nee</button>
+		</div>
 	</div>
 	<div class="block-2 w3-half w3-container">
 		<h1>Toppings</h1>
-			<div id="toppings" onclick="selected();">
+			<p>Kies hier uw topping en grootte van de pizza:</p>
+			<div id="toppings" class="btn_default_top" onclick="selected();">
 			</div>
-			<div id="slices">
+			<div id="slices" class="btn_default_size">
 				<p id="normal" onclick="multiplyPrice(0);">Normal</p>
 				<p id="medium" onclick="multiplyPrice(1);">Medium</p>
 				<p id="large" onclick="multiplyPrice(2);">Large</p>
