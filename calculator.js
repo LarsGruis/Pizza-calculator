@@ -9,10 +9,13 @@ pizza_slices = [1, 1.2, 1.4, 2];
 allPrices = [];
 priceGlobalArray = [];
 deliveryPriceArray = [];
+pinPriceArray = [];
 var sum = 0;
 var deliveryPrice = 2;
+var pinPrice = 2;
 
 var totalPrice = 0;
+var totalPinPrice = 0;
 var container = document.getElementById("pizzas");
 
 //hiermee wordt de lijst van pizzas gegenereerd
@@ -54,6 +57,8 @@ function createPizzaList(){
 
     container.appendChild(myList);
   } 
+
+  console.log(createPizzaList);
 }
 
 // Einde
@@ -75,6 +80,8 @@ function hidePizzaList($id) {
 
         var price = pizza_prices[$id];
         allPrices.push(price);
+
+        console.log(hidePizzaList);
 }
 
 // Einde 
@@ -118,6 +125,8 @@ function createToppingList(){
 
       document.getElementById('li' + x).onclick = function() {
         selected(this.id);
+
+      console.log(createToppingList);
       }
     }
   } 
@@ -142,6 +151,8 @@ function selected(id){
     document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + sum ;
     document.getElementById('slices').style.display = 'block';
     document.getElementById('slices').style.float = 'left';
+
+    console.log(selected);
 }
 
 // deze code zorgt ervoor dat de prijs van de pizza wordt vermenigdvuldigt met de grootte die je aanklikt
@@ -163,6 +174,8 @@ function multiplyPrice(id) {
   document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalPrice;
   document.getElementById('toppings').style.display = 'none';
   document.getElementById('home_delivery').style.display = 'block';
+
+  console.log(multiplyPrice);
 }
 
 // code van de checkbox
@@ -184,17 +197,68 @@ function check(id) {
 
   document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalNewPrice;
 
+  document.getElementById('home_delivery').style.display = 'none';
+
+  document.getElementById('payment_choice').style.display = 'block';
+
+  console.log(check);
+
+}
+
+function pin(id) {
+  document.getElementById("payByPin").checked = true;
+
+  // dit zorgt ervoor dat de prijs van de pizza vermenigvuldigt wordt met de grootte die je aanklikt
+
+    newPinPrice = totalNewPrice - pinPrice; 
+
+    pinPriceArray.push(newPinPrice);
+
+  totalNewPinPrice = pinPriceArray.reduce(add, 0);
+
+  function add(x, z) {
+        return x + z;
+    }
+
+  document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalNewPinPrice;
+
+  document.getElementById('payment_choice').style.display = 'none';
+
+  console.log(pin);
+
 }
 
 
+function changeBackground() {
+  click = true;
 
+  if (click) {
+    document.getElementById('red').style.background = '#f44336';
+
+    click = false;
+  } 
+  else{
+    document.getElementById('red').style.background = 'white';
+
+    click = true;
+  }
+}
 
 
 function uncheck() {
   document.getElementById("myCheck").checked = false;
 }
 
+function green_alert() {
+  document.getElementById('green_alert').style.display = 'block';
 
+  setTimeout(function green_alert(){ 
+    document.getElementById('green_alert').style.display = "none";
+   }
+    , 3500);
+
+  console.log(green_alert);
+}
 
 
 

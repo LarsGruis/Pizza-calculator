@@ -4,9 +4,10 @@
 	<title>Pizza calculator</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel='icon' href='favicon.ico' type='image/x-icon'/ >
 	<meta charset="UTF-8">
 </head>
-<body>
+<body id="red">
 
 	<!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -14,7 +15,10 @@
     <a href="home.html" class="w3-bar-item w3-button">Pizza calculator</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="" class="w3-bar-item w3-button notification">
+      	<span>Aantal bestelde pizza's</span>
+		<span class="badge">4</span>
+      </a>
     </div>
   </div>
 </div>
@@ -26,16 +30,25 @@
   	</div>
 </header> -->
 
+<div id="green_alert">
+	<div class="w3-panel w3-green w3-display-container">
+	  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>	
+	  <h3>Gelukt!</h3>
+	  <p>Bedankt voor het kiezen van één van onze pizza's</p>
+	</div>
+</div>
+
 <div id="hide_list">
 	<h1 class="middle-title">Pizza calculator</h1>
 		<div class="w3-row">
 			<div class="block-1 w3-half w3-container">
 				<h1>Pizza's</h1>
-					<div class="btn_default" id="pizzas">
+					<div class="btn_default" id="pizzas" onclick="green_alert();">
 					</div>
 			</div>
 			<div class="block-1 w3-half w3-container">
-				<img src="logo.png"></img>
+				<img onclick="changeBackground();" src="logo.png"></img>
 			</div>
 		</div>
 </div>
@@ -48,8 +61,13 @@
 
 		<div id="pizza_price"></div>
 		<div id="home_delivery">
-			<p>Wilt u dat de pizza thuis bezorgd wordt?</p> <input type="checkbox" id="myCheck">
+			<p>Wilt u dat de pizza thuis bezorgd wordt? Thuisbezorging kost €2.</p> <input type="checkbox" id="myCheck">
 			<button onclick="check();">Ja</button>
+			<button onclick="uncheck();">Nee</button>
+		</div>
+		<div id="payment_choice">
+			<p>Wilt u pinnen? (€2 korting)</p> <input type="checkbox" id="payByPin">
+			<button onclick="pin();">Ja</button>
 			<button onclick="uncheck();">Nee</button>
 		</div>
 	</div>
