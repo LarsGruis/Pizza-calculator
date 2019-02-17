@@ -66,7 +66,7 @@ hr {
 }
 
 #pizza_omschrijving {
-  padding-top: 75px;
+  padding-top: 0px;
   padding-left: 25px;
   letter-spacing: 4px;
   font-family: "Segoe UI", Verdana, sans-serif;
@@ -115,6 +115,10 @@ hr {
   margin-right: 0;
   float: right;
   margin-bottom: 10px;
+  display: none;
+}
+
+#size {
   display: none;
 }
 
@@ -208,8 +212,8 @@ hr {
 }
 
 .w3-panel {
-  margin-top: 54px !important;
-  margin-bottom: -55px !important;
+  margin-top: -22px !important;
+  margin-bottom: 20px !important;
   text-align: center;
 }
 

@@ -58,7 +58,7 @@ function createPizzaList(){
     container.appendChild(myList);
   } 
 
-  console.log(createPizzaList);
+  console.log('createPizzaList: Deze functie genereerd de pizza lijst op de home pagina.');
 }
 
 // Einde
@@ -132,7 +132,7 @@ function createToppingList(){
   } 
 }
 
-// deze code zorgt ervoor dat als je een topping aanklikt dat deze rood wordt en dat de prijs van de topping bij de prijs van de pizza wordt opgeteld.
+// deze code zorgt ervoor dat als je een topping aanklikt dat deze groen wordt en dat de prijs van de topping bij de prijs van de pizza wordt opgeteld.
 
 function selected(id){
     document.getElementById(id).style.background = "#3f7007";
@@ -173,6 +173,28 @@ function multiplyPrice(id) {
 
   document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalPrice;
   document.getElementById('toppings').style.display = 'none';
+  document.getElementById('home_delivery').style.display = 'block';
+  document.getElementById('size').style.display = 'block';
+
+  console.log(multiplyPrice);
+}
+
+function sizePrice(id) {
+
+  // dit zorgt ervoor dat de prijs van de pizza vermenigvuldigt wordt met de grootte die je aanklikt
+
+    multipliedPrice = sum / pizza_slices[id]; 
+
+    priceGlobalArray.push(multipliedPrice);
+
+  totalPrice = priceGlobalArray.reduce(add, 0);
+
+  function add(c, d) {
+        return c + d;
+    }
+
+  document.getElementById('pizza_price').innerHTML = 'De prijs van uw pizza: €' + totalPrice;
+  document.getElementById('slices').style.display = 'none';
   document.getElementById('home_delivery').style.display = 'block';
 
   console.log(multiplyPrice);
@@ -233,7 +255,7 @@ function changeBackground() {
   click = true;
 
   if (click) {
-    document.getElementById('red').style.background = '#f44336';
+    document.getElementById('red').style.background = '#b7b7b7';
 
     click = false;
   } 
@@ -244,9 +266,12 @@ function changeBackground() {
   }
 }
 
-
 function uncheck() {
   document.getElementById("myCheck").checked = false;
+
+  document.getElementById("home_delivery").style.display = 'none';
+
+  document.getElementById('payment_choice').style.display = 'block';
 }
 
 function green_alert() {
