@@ -6,8 +6,10 @@
 pizza_list = ["Margeritha","Shoarma","Kaas","Salami","Hawai"];
 pizza_prices = [8, 9, 8.50, 8, 7.50];
 pizza_slices = [1, 1.2, 1.4, 2];
+pizza_sizes = [1, 1.2, 1.4, 2];
 allPrices = [];
 priceGlobalArray = [];
+sizeGlobalArray = [];
 deliveryPriceArray = [];
 pinPriceArray = [];
 var sum = 0;
@@ -183,11 +185,11 @@ function sizePrice(id) {
 
   // dit zorgt ervoor dat de prijs van de pizza vermenigvuldigt wordt met de grootte die je aanklikt
 
-    multipliedPrice = sum / pizza_slices[id]; 
+    sizePrice = sum / pizza_sizes[id]; 
 
-    priceGlobalArray.push(multipliedPrice);
+    sizeGlobalArray.push(sizePrice);
 
-  totalPrice = priceGlobalArray.reduce(add, 0);
+  totalPrice = sizeGlobalArray.reduce(add, 0);
 
   function add(c, d) {
         return c + d;
@@ -197,7 +199,7 @@ function sizePrice(id) {
   document.getElementById('slices').style.display = 'none';
   document.getElementById('home_delivery').style.display = 'block';
 
-  console.log(multiplyPrice);
+  console.log(sizePrice);
 }
 
 // code van de checkbox
